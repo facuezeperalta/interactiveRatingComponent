@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100..900;1,100..900&display=swap');
+
+// Variables
+$backgroundColorDark: #141519;
+$orange: hsl(25, 97%, 53%);
+$White: hsl(0, 0%, 100%);
+$LightGrey: hsl(217, 12%, 63%);
+$DarkBlue: hsl(213, 19%, 18%);
+$VeryDarkBlue: hsl(216, 12%, 8%);
+$CircleColor: #262f38;
+$fontSizeBody: 15px;
+$font: "Overpass", serif;
+$mobileSize: 375px;
+$DesktopSize: 1440px;
+
+//mixin de los medias queries.
+@mixin desktopview{
+    @media screen and (min-width: 1440px){
+        @content;
+    }
+}
+
+@mixin mobileview{
+    @media screen and (min-width: 375px){
+        @content;
+    }
+}
+
+//
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62,5%;
+    font-family: $font;
+}
+body{
+
+    @include mobileview(){
+        background-color: $backgroundColorDark; 
+
+
+    }
+    // @include desktopview(){
+    //     background-color: lightcoral;
+    // }
+}
+
+.main-container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.main-content{
+    width: 80%;
+    height: auto;
+    padding: 30px;
+    background: rgb(34,41,51);
+    background: linear-gradient(180deg, rgba(34,41,51,1) 45%, rgba(24,31,39,1) 100%); 
+    border-radius: 15px;
+    p{
+        color:$White;
+        font-size: $fontSizeBody;
+    }
+    ul{
+        list-style: none;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
+.start-container{
+    width: 25px;
+    height: 25px;
+    background-color: $CircleColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    padding: 15px;
+}
+a{
+    text-decoration: none;
+    
+}
+.title{
+    color:$White;
+    margin-bottom: 10px;
+}
+
+.number-container{
+    display: flex;
+    justify-content: space-between;
+    justify-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    
+}
+
+
+.number-element{
+    color: $White;
+    
+}
+
+.circle-number{
+    width: 40px;
+    height: 40px;
+    background-color: $CircleColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    &:hover{
+        .number-element{
+            color: $DarkBlue;
+        }
+        background-color: $White;
+        
+    }
+}
+
+
+.button-container{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+.button-submit{
+    width: 75%;
+    padding: 20px;
+    background-color: $orange;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 400;
+}
